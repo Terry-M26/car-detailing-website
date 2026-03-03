@@ -1,3 +1,11 @@
+/**
+ * Floating WhatsApp button fixed to the bottom-right corner of every page.
+ * Provides a quick way for visitors to start a chat.
+ *
+ * Customization:
+ * - Replace "1234567890" in the href with your WhatsApp number (international format, no dashes).
+ * - Edit the pre-filled message text after "?text=" (URL-encoded).
+ */
 export default function WhatsAppButton() {
   return (
     <a

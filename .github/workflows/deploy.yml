@@ -1,32 +1,39 @@
+# GitHub Actions workflow for building and deploying to GitHub Pages.
+# Triggers automatically on every push to the main branch.
+# Requires GitHub Pages source to be set to "GitHub Actions" in repo Settings > Pages.
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
 
+# Permissions needed by the workflow to read code and publish to Pages.
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Prevent multiple deployments from running at the same time.
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
+  # Build job: installs dependencies, builds the Vite project, and uploads the output.
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4           # Clone the repository
+      - uses: actions/setup-node@v4         # Install Node.js
         with:
           node-version: 20
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - run: npm ci                          # Install dependencies (clean install)
+      - run: npm run build                   # Build the production bundle into /dist
+      - uses: actions/upload-pages-artifact@v3  # Upload /dist as a Pages artifact
         with:
           path: dist
 
+  # Deploy job: takes the built artifact and publishes it to GitHub Pages.
   deploy:
     needs: build
     runs-on: ubuntu-latest

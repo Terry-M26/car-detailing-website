@@ -2,16 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Favicon: replace with your own logo or icon -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO meta tags: update these to match your business name, services, and location -->
     <meta name="description" content="Hero Car Detailing — Professional car detailing services. Interior, exterior, full detailing & ceramic coating. Book now!" />
     <meta name="keywords" content="car detailing, auto detailing, ceramic coating, interior detailing, exterior polish, car wash" />
     <title>Hero Car Detailing | Professional Car Detailing Services</title>
+
+    <!-- Google Fonts: Inter is used as the primary font throughout the site -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   </head>
+  <!-- Base body styles use TailwindCSS classes. The dark background and light text
+       are set here so they apply before React loads, preventing a flash of unstyled content. -->
   <body class="font-[Inter,system-ui,sans-serif] bg-gray-950 text-gray-100">
+    <!-- React mounts the entire application into this div -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

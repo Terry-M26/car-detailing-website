@@ -1,9 +1,14 @@
+/* Import TailwindCSS v4 — all utility classes are generated from this single import. */
 @import "tailwindcss";
 
+/* Enable smooth scrolling for anchor-link navigation between sections. */
 html {
   scroll-behavior: smooth;
 }
 
+/* Base body styles.
+   min-width prevents layout breaking on very small viewports.
+   Font smoothing gives text a cleaner appearance on macOS/iOS. */
 body {
   margin: 0;
   min-width: 320px;

@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
+/**
+ * Navigation links configuration.
+ * Each entry maps a label to an anchor section on the homepage.
+ * To add a new section, add an entry here and create the matching
+ * section component with a corresponding id attribute.
+ */
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Services', href: '#services' },
@@ -10,18 +16,34 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 
+/**
+ * Responsive navigation bar with scroll-aware styling.
+ *
+ * Behavior:
+ * - Transparent when at the top of the page, becomes solid on scroll.
+ * - On the homepage, links smooth-scroll to anchor sections.
+ * - On other pages (e.g. /gallery), links navigate back to the homepage.
+ * - Mobile menu toggles open/closed with a hamburger icon.
+ *
+ * Customization:
+ * - Update the brand name in the <Link> element below.
+ * - Change the WhatsApp number in the "Book Now" button href.
+ */
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);       // Mobile menu open/closed state
+  const [scrolled, setScrolled] = useState(false); // Whether user has scrolled past the top
   const location = useLocation();
   const isHome = location.pathname === '/';
 
+  // Listen for scroll events to toggle the navbar background style.
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // On the homepage, intercept anchor clicks to smooth-scroll instead of jumping.
+  // On other pages, let the default navigation happen (back to homepage with anchor).
   const handleClick = (e, href) => {
     setOpen(false);
     if (!isHome) return;

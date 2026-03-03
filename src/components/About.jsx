@@ -1,5 +1,10 @@
 import { Award, Clock, MapPin, ThumbsUp } from 'lucide-react';
 
+/**
+ * Business highlights displayed as small icon cards.
+ * Each entry represents a key selling point.
+ * Edit these to match your own business strengths.
+ */
 const highlights = [
   { icon: Award, label: 'Premium Products', text: 'Only the best detailing products' },
   { icon: Clock, label: 'Punctual Service', text: 'We value your time' },
@@ -7,6 +12,16 @@ const highlights = [
   { icon: MapPin, label: 'Mobile Service', text: 'We come to you' },
 ];
 
+/**
+ * About section with a two-column layout: image on the left, text on the right.
+ * Includes a brief company story, a floating experience badge, and
+ * a 2x2 grid of business highlights.
+ *
+ * Customization:
+ * - Replace the image URL with your own photo.
+ * - Rewrite the paragraphs to tell your story.
+ * - Update the experience badge text and city name.
+ */
 export default function About() {
   return (
     <section id="about" className="py-20 md:py-28 bg-gray-950">

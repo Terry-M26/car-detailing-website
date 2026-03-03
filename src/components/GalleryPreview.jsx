@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
+/**
+ * Preview images shown on the homepage gallery section.
+ * These are a curated subset meant to entice visitors to view the full gallery.
+ * Replace the Unsplash URLs with your own before/after photos.
+ */
 const previewImages = [
   {
     src: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=600&q=80',
@@ -28,6 +33,15 @@ const previewImages = [
   },
 ];
 
+/**
+ * Homepage gallery preview section.
+ * Displays a responsive grid of images with a hover zoom effect and
+ * a link to the full before/after gallery page (/gallery).
+ *
+ * Customization:
+ * - Edit the previewImages array above to swap in your own photos.
+ * - Adjust the grid columns in the className if you want a different layout.
+ */
 export default function GalleryPreview() {
   return (
     <section id="gallery" className="py-20 md:py-28 bg-gray-950">

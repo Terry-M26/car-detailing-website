@@ -1,5 +1,10 @@
 import { Phone, Mail, MessageCircle, Instagram, MapPin } from 'lucide-react';
 
+/**
+ * Contact method entries displayed as clickable cards.
+ * Each entry defines an icon, label, display value, link, and accent color.
+ * Update these with your real phone number, email, and social handles.
+ */
 const contactMethods = [
   {
     icon: Phone,
@@ -31,6 +36,17 @@ const contactMethods = [
   },
 ];
 
+/**
+ * Contact section with a two-column layout:
+ * - Left column: clickable contact method cards (phone, WhatsApp, email, Instagram)
+ *   and a service area note.
+ * - Right column: embedded Google Maps iframe showing your location.
+ *
+ * Customization:
+ * - Edit the contactMethods array above with your real details.
+ * - Replace the Google Maps embed URL with your own location.
+ *   (Go to Google Maps -> Share -> Embed a map -> copy the src URL)
+ */
 export default function Contact() {
   return (
     <section id="contact" className="py-20 md:py-28 bg-gray-900">

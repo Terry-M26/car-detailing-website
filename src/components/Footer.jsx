@@ -1,5 +1,19 @@
 import { Instagram, Phone, Mail, MessageCircle } from 'lucide-react';
 
+/**
+ * Site-wide footer with a four-column grid layout:
+ *   1. Brand name and tagline
+ *   2. Quick anchor links back to homepage sections
+ *   3. List of offered services
+ *   4. Contact links (phone, email, WhatsApp, Instagram)
+ *
+ * A bottom bar displays the copyright year (auto-updated), service area,
+ * and social media icons.
+ *
+ * Customization:
+ * - Update the brand name, tagline, and service area text.
+ * - Change phone numbers, email, and social links to your own.
+ */
 export default function Footer() {
   const year = new Date().getFullYear();
 

@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { useEffect } from 'react';
 
+/**
+ * Before/after image pairs for the full gallery page.
+ * Each entry has a "before" image, an "after" image, and a label.
+ * Replace the Unsplash URLs with your own real project photos.
+ */
 const galleryPairs = [
   {
     before:
@@ -47,7 +52,18 @@ const galleryPairs = [
   },
 ];
 
+/**
+ * Dedicated gallery page showing before/after comparisons in a responsive grid.
+ * Each card displays a side-by-side "BEFORE" and "AFTER" image with a label.
+ * Includes a back-to-home link and a WhatsApp CTA at the bottom.
+ *
+ * Customization:
+ * - Edit the galleryPairs array above to add your own transformation photos.
+ * - Update the WhatsApp number in the CTA button href.
+ */
 export default function GalleryPage() {
+  // Scroll to top when navigating to this page, since React Router
+  // preserves scroll position by default.
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

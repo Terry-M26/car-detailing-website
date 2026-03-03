@@ -1,5 +1,15 @@
 import { ChevronDown } from 'lucide-react';
 
+/**
+ * Full-screen hero section displayed at the top of the homepage.
+ * Features a background image with a dark gradient overlay, headline text,
+ * two call-to-action buttons, and an animated scroll-down indicator.
+ *
+ * Customization:
+ * - Replace the backgroundImage URL with your own hero photo.
+ * - Update the headline, tagline, and city name.
+ * - Change the WhatsApp link to your own number.
+ */
 export default function Hero() {
   return (
     <section

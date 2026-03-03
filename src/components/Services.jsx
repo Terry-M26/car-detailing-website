@@ -1,5 +1,11 @@
 import { Sparkles, Car, ShieldCheck, Droplets } from 'lucide-react';
 
+/**
+ * Service offerings data.
+ * Each entry defines a card shown in the services grid.
+ * To add or remove a service, edit this array.
+ * Icons come from the Lucide React library (https://lucide.dev).
+ */
 const services = [
   {
     icon: Sparkles,
@@ -35,6 +41,15 @@ const services = [
   },
 ];
 
+/**
+ * Services section displaying available detailing packages in a responsive grid.
+ * Each card shows an icon, name, description, price, and estimated duration.
+ * A WhatsApp CTA button sits below the grid for quick quote requests.
+ *
+ * Customization:
+ * - Edit the services array above to change offerings, prices, and durations.
+ * - Update the WhatsApp number in the CTA button href.
+ */
 export default function Services() {
   return (
     <section id="services" className="py-20 md:py-28 bg-gray-950">
